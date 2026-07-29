@@ -26,1714 +26,60 @@
       <stop offset="100%" stop-color="#0F172A" />
     </linearGradient>
 
+    <!-- Pac-Man Runner Group Def -->
+    <g id="pacmanRunnerSymbol">
+      <!-- Ghosts Chasing / Following Pac-Man -->
+      <g transform="translate(-160, -18)">
+        <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#EF4444"/>
+        <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
+        <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
+      </g>
+
+      <g transform="translate(-115, -18)">
+        <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#F472B6"/>
+        <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
+        <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
+      </g>
+
+      <g transform="translate(-70, -18)">
+        <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#38BDF8"/>
+        <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
+        <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
+      </g>
+
+      <g transform="translate(-25, -18)">
+        <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#F59E0B"/>
+        <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
+        <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
+        <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
+      </g>
+
+      <!-- Pac-Man Hero Eating Pellets -->
+      <g transform="translate(30, 0)">
+        <circle cx="0" cy="0" r="20" fill="#FACC15"/>
+        <path d="M 0 0 L 22 -12 A 20 20 0 0 1 22 12 Z" fill="#0A101F">
+          <animate attributeName="d" values="M 0 0 L 22 -12 A 20 20 0 0 1 22 12 Z; M 0 0 L 22 -1 A 20 20 0 0 1 22 1 Z; M 0 0 L 22 -12 A 20 20 0 0 1 22 12 Z" dur="0.22s" repeatCount="indefinite" />
+        </path>
+        <circle cx="2" cy="-10" r="2.5" fill="#0A101F"/>
+      </g>
+    </g>
+
     <style>
-      @keyframes pacmanRun {{
-        0% {{
-          transform: translate3d(-200px, 0px, 0px);
-        }}
-        100% {{
-          transform: translate3d(1380px, 0px, 0px);
-        }}
+      @keyframes moveX {{
+        0% {{ x: -200px; }}
+        100% {{ x: 1380px; }}
       }}
 
-      @keyframes ghostBounce {{
-        0%, 100% {{ transform: translate3d(0px, 0px, 0px); }}
-        50% {{ transform: translate3d(0px, -5px, 0px); }}
+      .runner-x {{
+        animation: moveX 10s linear infinite;
       }}
-
-      @keyframes mouthChompTop {{
-        0%, 100% {{ transform: rotate(0deg); }}
-        50% {{ transform: rotate(-35deg); }}
-      }}
-
-      @keyframes mouthChompBottom {{
-        0%, 100% {{ transform: rotate(0deg); }}
-        50% {{ transform: rotate(35deg); }}
-      }}
-
-      .pacman-runner-group {{
-        will-change: transform;
-        animation: pacmanRun 10s linear infinite;
-      }}
-
-      .ghost-bounce {{
-        animation: ghostBounce 1.2s ease-in-out infinite;
-      }}
-
-      .mouth-top {{
-        transform-origin: 0px 0px;
-        animation: mouthChompTop 0.25s ease-in-out infinite;
-      }}
-
-      .mouth-bottom {{
-        transform-origin: 0px 0px;
-        animation: mouthChompBottom 0.25s ease-in-out infinite;
-      }}
-    
-      @keyframes dotAnim_0_0 {
-        0%, 15.4% { opacity: 0.9; }
-        16.4%, 27.4% { opacity: 0; }
-        40.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_0_0 {
-        animation: dotAnim_0_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_0_1 {
-        0%, 15.4% { opacity: 0.9; }
-        16.4%, 27.4% { opacity: 0; }
-        40.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_0_1 {
-        animation: dotAnim_0_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_0_2 {
-        0%, 15.4% { opacity: 0.9; }
-        16.4%, 27.4% { opacity: 0; }
-        40.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_0_2 {
-        animation: dotAnim_0_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_0_3 {
-        0%, 15.4% { opacity: 0.9; }
-        16.4%, 27.4% { opacity: 0; }
-        40.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_0_3 {
-        animation: dotAnim_0_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_1_0 {
-        0%, 16.8% { opacity: 0.9; }
-        17.8%, 28.8% { opacity: 0; }
-        41.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_1_0 {
-        animation: dotAnim_1_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_1_1 {
-        0%, 16.8% { opacity: 0.9; }
-        17.8%, 28.8% { opacity: 0; }
-        41.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_1_1 {
-        animation: dotAnim_1_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_1_2 {
-        0%, 16.8% { opacity: 0.9; }
-        17.8%, 28.8% { opacity: 0; }
-        41.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_1_2 {
-        animation: dotAnim_1_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_1_3 {
-        0%, 16.8% { opacity: 0.9; }
-        17.8%, 28.8% { opacity: 0; }
-        41.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_1_3 {
-        animation: dotAnim_1_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_2_0 {
-        0%, 18.2% { opacity: 0.9; }
-        19.2%, 30.2% { opacity: 0; }
-        43.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_2_0 {
-        animation: dotAnim_2_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_2_1 {
-        0%, 18.2% { opacity: 0.9; }
-        19.2%, 30.2% { opacity: 0; }
-        43.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_2_1 {
-        animation: dotAnim_2_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_2_2 {
-        0%, 18.2% { opacity: 0.9; }
-        19.2%, 30.2% { opacity: 0; }
-        43.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_2_2 {
-        animation: dotAnim_2_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_2_3 {
-        0%, 18.2% { opacity: 0.9; }
-        19.2%, 30.2% { opacity: 0; }
-        43.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_2_3 {
-        animation: dotAnim_2_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_3_0 {
-        0%, 19.5% { opacity: 0.9; }
-        20.5%, 31.5% { opacity: 0; }
-        44.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_3_0 {
-        animation: dotAnim_3_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_3_1 {
-        0%, 19.5% { opacity: 0.9; }
-        20.5%, 31.5% { opacity: 0; }
-        44.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_3_1 {
-        animation: dotAnim_3_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_3_2 {
-        0%, 19.5% { opacity: 0.9; }
-        20.5%, 31.5% { opacity: 0; }
-        44.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_3_2 {
-        animation: dotAnim_3_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_3_3 {
-        0%, 19.5% { opacity: 0.9; }
-        20.5%, 31.5% { opacity: 0; }
-        44.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_3_3 {
-        animation: dotAnim_3_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_4_0 {
-        0%, 20.9% { opacity: 0.9; }
-        21.9%, 32.9% { opacity: 0; }
-        45.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_4_0 {
-        animation: dotAnim_4_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_4_1 {
-        0%, 20.9% { opacity: 0.9; }
-        21.9%, 32.9% { opacity: 0; }
-        45.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_4_1 {
-        animation: dotAnim_4_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_4_2 {
-        0%, 20.9% { opacity: 0.9; }
-        21.9%, 32.9% { opacity: 0; }
-        45.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_4_2 {
-        animation: dotAnim_4_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_4_3 {
-        0%, 20.9% { opacity: 0.9; }
-        21.9%, 32.9% { opacity: 0; }
-        45.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_4_3 {
-        animation: dotAnim_4_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_5_0 {
-        0%, 22.2% { opacity: 0.9; }
-        23.2%, 34.2% { opacity: 0; }
-        47.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_5_0 {
-        animation: dotAnim_5_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_5_1 {
-        0%, 22.2% { opacity: 0.9; }
-        23.2%, 34.2% { opacity: 0; }
-        47.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_5_1 {
-        animation: dotAnim_5_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_5_2 {
-        0%, 22.2% { opacity: 0.9; }
-        23.2%, 34.2% { opacity: 0; }
-        47.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_5_2 {
-        animation: dotAnim_5_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_5_3 {
-        0%, 22.2% { opacity: 0.9; }
-        23.2%, 34.2% { opacity: 0; }
-        47.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_5_3 {
-        animation: dotAnim_5_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_6_0 {
-        0%, 23.6% { opacity: 0.9; }
-        24.6%, 35.6% { opacity: 0; }
-        48.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_6_0 {
-        animation: dotAnim_6_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_6_1 {
-        0%, 23.6% { opacity: 0.9; }
-        24.6%, 35.6% { opacity: 0; }
-        48.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_6_1 {
-        animation: dotAnim_6_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_6_2 {
-        0%, 23.6% { opacity: 0.9; }
-        24.6%, 35.6% { opacity: 0; }
-        48.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_6_2 {
-        animation: dotAnim_6_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_6_3 {
-        0%, 23.6% { opacity: 0.9; }
-        24.6%, 35.6% { opacity: 0; }
-        48.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_6_3 {
-        animation: dotAnim_6_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_7_0 {
-        0%, 25.0% { opacity: 0.9; }
-        26.0%, 37.0% { opacity: 0; }
-        50.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_7_0 {
-        animation: dotAnim_7_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_7_1 {
-        0%, 25.0% { opacity: 0.9; }
-        26.0%, 37.0% { opacity: 0; }
-        50.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_7_1 {
-        animation: dotAnim_7_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_7_2 {
-        0%, 25.0% { opacity: 0.9; }
-        26.0%, 37.0% { opacity: 0; }
-        50.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_7_2 {
-        animation: dotAnim_7_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_7_3 {
-        0%, 25.0% { opacity: 0.9; }
-        26.0%, 37.0% { opacity: 0; }
-        50.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_7_3 {
-        animation: dotAnim_7_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_8_0 {
-        0%, 26.3% { opacity: 0.9; }
-        27.3%, 38.3% { opacity: 0; }
-        51.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_8_0 {
-        animation: dotAnim_8_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_8_1 {
-        0%, 26.3% { opacity: 0.9; }
-        27.3%, 38.3% { opacity: 0; }
-        51.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_8_1 {
-        animation: dotAnim_8_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_8_2 {
-        0%, 26.3% { opacity: 0.9; }
-        27.3%, 38.3% { opacity: 0; }
-        51.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_8_2 {
-        animation: dotAnim_8_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_8_3 {
-        0%, 26.3% { opacity: 0.9; }
-        27.3%, 38.3% { opacity: 0; }
-        51.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_8_3 {
-        animation: dotAnim_8_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_9_0 {
-        0%, 27.7% { opacity: 0.9; }
-        28.7%, 39.7% { opacity: 0; }
-        52.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_9_0 {
-        animation: dotAnim_9_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_9_1 {
-        0%, 27.7% { opacity: 0.9; }
-        28.7%, 39.7% { opacity: 0; }
-        52.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_9_1 {
-        animation: dotAnim_9_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_9_2 {
-        0%, 27.7% { opacity: 0.9; }
-        28.7%, 39.7% { opacity: 0; }
-        52.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_9_2 {
-        animation: dotAnim_9_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_9_3 {
-        0%, 27.7% { opacity: 0.9; }
-        28.7%, 39.7% { opacity: 0; }
-        52.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_9_3 {
-        animation: dotAnim_9_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_10_0 {
-        0%, 29.1% { opacity: 0.9; }
-        30.1%, 41.1% { opacity: 0; }
-        54.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_10_0 {
-        animation: dotAnim_10_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_10_1 {
-        0%, 29.1% { opacity: 0.9; }
-        30.1%, 41.1% { opacity: 0; }
-        54.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_10_1 {
-        animation: dotAnim_10_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_10_2 {
-        0%, 29.1% { opacity: 0.9; }
-        30.1%, 41.1% { opacity: 0; }
-        54.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_10_2 {
-        animation: dotAnim_10_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_10_3 {
-        0%, 29.1% { opacity: 0.9; }
-        30.1%, 41.1% { opacity: 0; }
-        54.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_10_3 {
-        animation: dotAnim_10_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_11_0 {
-        0%, 30.4% { opacity: 0.9; }
-        31.4%, 42.4% { opacity: 0; }
-        55.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_11_0 {
-        animation: dotAnim_11_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_11_1 {
-        0%, 30.4% { opacity: 0.9; }
-        31.4%, 42.4% { opacity: 0; }
-        55.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_11_1 {
-        animation: dotAnim_11_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_11_2 {
-        0%, 30.4% { opacity: 0.9; }
-        31.4%, 42.4% { opacity: 0; }
-        55.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_11_2 {
-        animation: dotAnim_11_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_11_3 {
-        0%, 30.4% { opacity: 0.9; }
-        31.4%, 42.4% { opacity: 0; }
-        55.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_11_3 {
-        animation: dotAnim_11_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_12_0 {
-        0%, 31.8% { opacity: 0.9; }
-        32.8%, 43.8% { opacity: 0; }
-        56.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_12_0 {
-        animation: dotAnim_12_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_12_1 {
-        0%, 31.8% { opacity: 0.9; }
-        32.8%, 43.8% { opacity: 0; }
-        56.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_12_1 {
-        animation: dotAnim_12_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_12_2 {
-        0%, 31.8% { opacity: 0.9; }
-        32.8%, 43.8% { opacity: 0; }
-        56.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_12_2 {
-        animation: dotAnim_12_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_12_3 {
-        0%, 31.8% { opacity: 0.9; }
-        32.8%, 43.8% { opacity: 0; }
-        56.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_12_3 {
-        animation: dotAnim_12_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_13_0 {
-        0%, 33.1% { opacity: 0.9; }
-        34.1%, 45.1% { opacity: 0; }
-        58.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_13_0 {
-        animation: dotAnim_13_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_13_1 {
-        0%, 33.1% { opacity: 0.9; }
-        34.1%, 45.1% { opacity: 0; }
-        58.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_13_1 {
-        animation: dotAnim_13_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_13_2 {
-        0%, 33.1% { opacity: 0.9; }
-        34.1%, 45.1% { opacity: 0; }
-        58.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_13_2 {
-        animation: dotAnim_13_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_13_3 {
-        0%, 33.1% { opacity: 0.9; }
-        34.1%, 45.1% { opacity: 0; }
-        58.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_13_3 {
-        animation: dotAnim_13_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_14_0 {
-        0%, 34.5% { opacity: 0.9; }
-        35.5%, 46.5% { opacity: 0; }
-        59.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_14_0 {
-        animation: dotAnim_14_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_14_1 {
-        0%, 34.5% { opacity: 0.9; }
-        35.5%, 46.5% { opacity: 0; }
-        59.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_14_1 {
-        animation: dotAnim_14_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_14_2 {
-        0%, 34.5% { opacity: 0.9; }
-        35.5%, 46.5% { opacity: 0; }
-        59.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_14_2 {
-        animation: dotAnim_14_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_14_3 {
-        0%, 34.5% { opacity: 0.9; }
-        35.5%, 46.5% { opacity: 0; }
-        59.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_14_3 {
-        animation: dotAnim_14_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_15_0 {
-        0%, 35.9% { opacity: 0.9; }
-        36.9%, 47.9% { opacity: 0; }
-        60.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_15_0 {
-        animation: dotAnim_15_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_15_1 {
-        0%, 35.9% { opacity: 0.9; }
-        36.9%, 47.9% { opacity: 0; }
-        60.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_15_1 {
-        animation: dotAnim_15_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_15_2 {
-        0%, 35.9% { opacity: 0.9; }
-        36.9%, 47.9% { opacity: 0; }
-        60.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_15_2 {
-        animation: dotAnim_15_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_15_3 {
-        0%, 35.9% { opacity: 0.9; }
-        36.9%, 47.9% { opacity: 0; }
-        60.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_15_3 {
-        animation: dotAnim_15_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_16_0 {
-        0%, 37.2% { opacity: 0.9; }
-        38.2%, 49.2% { opacity: 0; }
-        62.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_16_0 {
-        animation: dotAnim_16_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_16_1 {
-        0%, 37.2% { opacity: 0.9; }
-        38.2%, 49.2% { opacity: 0; }
-        62.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_16_1 {
-        animation: dotAnim_16_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_16_2 {
-        0%, 37.2% { opacity: 0.9; }
-        38.2%, 49.2% { opacity: 0; }
-        62.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_16_2 {
-        animation: dotAnim_16_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_16_3 {
-        0%, 37.2% { opacity: 0.9; }
-        38.2%, 49.2% { opacity: 0; }
-        62.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_16_3 {
-        animation: dotAnim_16_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_17_0 {
-        0%, 38.6% { opacity: 0.9; }
-        39.6%, 50.6% { opacity: 0; }
-        63.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_17_0 {
-        animation: dotAnim_17_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_17_1 {
-        0%, 38.6% { opacity: 0.9; }
-        39.6%, 50.6% { opacity: 0; }
-        63.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_17_1 {
-        animation: dotAnim_17_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_17_2 {
-        0%, 38.6% { opacity: 0.9; }
-        39.6%, 50.6% { opacity: 0; }
-        63.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_17_2 {
-        animation: dotAnim_17_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_17_3 {
-        0%, 38.6% { opacity: 0.9; }
-        39.6%, 50.6% { opacity: 0; }
-        63.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_17_3 {
-        animation: dotAnim_17_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_18_0 {
-        0%, 39.9% { opacity: 0.9; }
-        40.9%, 51.9% { opacity: 0; }
-        64.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_18_0 {
-        animation: dotAnim_18_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_18_1 {
-        0%, 39.9% { opacity: 0.9; }
-        40.9%, 51.9% { opacity: 0; }
-        64.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_18_1 {
-        animation: dotAnim_18_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_18_2 {
-        0%, 39.9% { opacity: 0.9; }
-        40.9%, 51.9% { opacity: 0; }
-        64.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_18_2 {
-        animation: dotAnim_18_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_18_3 {
-        0%, 39.9% { opacity: 0.9; }
-        40.9%, 51.9% { opacity: 0; }
-        64.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_18_3 {
-        animation: dotAnim_18_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_19_0 {
-        0%, 41.3% { opacity: 0.9; }
-        42.3%, 53.3% { opacity: 0; }
-        66.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_19_0 {
-        animation: dotAnim_19_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_19_1 {
-        0%, 41.3% { opacity: 0.9; }
-        42.3%, 53.3% { opacity: 0; }
-        66.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_19_1 {
-        animation: dotAnim_19_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_19_2 {
-        0%, 41.3% { opacity: 0.9; }
-        42.3%, 53.3% { opacity: 0; }
-        66.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_19_2 {
-        animation: dotAnim_19_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_19_3 {
-        0%, 41.3% { opacity: 0.9; }
-        42.3%, 53.3% { opacity: 0; }
-        66.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_19_3 {
-        animation: dotAnim_19_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_20_0 {
-        0%, 42.7% { opacity: 0.9; }
-        43.7%, 54.7% { opacity: 0; }
-        67.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_20_0 {
-        animation: dotAnim_20_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_20_1 {
-        0%, 42.7% { opacity: 0.9; }
-        43.7%, 54.7% { opacity: 0; }
-        67.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_20_1 {
-        animation: dotAnim_20_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_20_2 {
-        0%, 42.7% { opacity: 0.9; }
-        43.7%, 54.7% { opacity: 0; }
-        67.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_20_2 {
-        animation: dotAnim_20_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_20_3 {
-        0%, 42.7% { opacity: 0.9; }
-        43.7%, 54.7% { opacity: 0; }
-        67.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_20_3 {
-        animation: dotAnim_20_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_21_0 {
-        0%, 44.0% { opacity: 0.9; }
-        45.0%, 56.0% { opacity: 0; }
-        69.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_21_0 {
-        animation: dotAnim_21_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_21_1 {
-        0%, 44.0% { opacity: 0.9; }
-        45.0%, 56.0% { opacity: 0; }
-        69.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_21_1 {
-        animation: dotAnim_21_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_21_2 {
-        0%, 44.0% { opacity: 0.9; }
-        45.0%, 56.0% { opacity: 0; }
-        69.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_21_2 {
-        animation: dotAnim_21_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_21_3 {
-        0%, 44.0% { opacity: 0.9; }
-        45.0%, 56.0% { opacity: 0; }
-        69.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_21_3 {
-        animation: dotAnim_21_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_22_0 {
-        0%, 45.4% { opacity: 0.9; }
-        46.4%, 57.4% { opacity: 0; }
-        70.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_22_0 {
-        animation: dotAnim_22_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_22_1 {
-        0%, 45.4% { opacity: 0.9; }
-        46.4%, 57.4% { opacity: 0; }
-        70.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_22_1 {
-        animation: dotAnim_22_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_22_2 {
-        0%, 45.4% { opacity: 0.9; }
-        46.4%, 57.4% { opacity: 0; }
-        70.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_22_2 {
-        animation: dotAnim_22_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_22_3 {
-        0%, 45.4% { opacity: 0.9; }
-        46.4%, 57.4% { opacity: 0; }
-        70.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_22_3 {
-        animation: dotAnim_22_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_23_0 {
-        0%, 46.7% { opacity: 0.9; }
-        47.7%, 58.7% { opacity: 0; }
-        71.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_23_0 {
-        animation: dotAnim_23_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_23_1 {
-        0%, 46.7% { opacity: 0.9; }
-        47.7%, 58.7% { opacity: 0; }
-        71.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_23_1 {
-        animation: dotAnim_23_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_23_2 {
-        0%, 46.7% { opacity: 0.9; }
-        47.7%, 58.7% { opacity: 0; }
-        71.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_23_2 {
-        animation: dotAnim_23_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_23_3 {
-        0%, 46.7% { opacity: 0.9; }
-        47.7%, 58.7% { opacity: 0; }
-        71.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_23_3 {
-        animation: dotAnim_23_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_24_0 {
-        0%, 48.1% { opacity: 0.9; }
-        49.1%, 60.1% { opacity: 0; }
-        73.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_24_0 {
-        animation: dotAnim_24_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_24_1 {
-        0%, 48.1% { opacity: 0.9; }
-        49.1%, 60.1% { opacity: 0; }
-        73.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_24_1 {
-        animation: dotAnim_24_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_24_2 {
-        0%, 48.1% { opacity: 0.9; }
-        49.1%, 60.1% { opacity: 0; }
-        73.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_24_2 {
-        animation: dotAnim_24_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_24_3 {
-        0%, 48.1% { opacity: 0.9; }
-        49.1%, 60.1% { opacity: 0; }
-        73.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_24_3 {
-        animation: dotAnim_24_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_25_0 {
-        0%, 49.5% { opacity: 0.9; }
-        50.5%, 61.5% { opacity: 0; }
-        74.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_25_0 {
-        animation: dotAnim_25_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_25_1 {
-        0%, 49.5% { opacity: 0.9; }
-        50.5%, 61.5% { opacity: 0; }
-        74.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_25_1 {
-        animation: dotAnim_25_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_25_2 {
-        0%, 49.5% { opacity: 0.9; }
-        50.5%, 61.5% { opacity: 0; }
-        74.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_25_2 {
-        animation: dotAnim_25_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_25_3 {
-        0%, 49.5% { opacity: 0.9; }
-        50.5%, 61.5% { opacity: 0; }
-        74.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_25_3 {
-        animation: dotAnim_25_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_26_0 {
-        0%, 50.8% { opacity: 0.9; }
-        51.8%, 62.8% { opacity: 0; }
-        75.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_26_0 {
-        animation: dotAnim_26_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_26_1 {
-        0%, 50.8% { opacity: 0.9; }
-        51.8%, 62.8% { opacity: 0; }
-        75.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_26_1 {
-        animation: dotAnim_26_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_26_2 {
-        0%, 50.8% { opacity: 0.9; }
-        51.8%, 62.8% { opacity: 0; }
-        75.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_26_2 {
-        animation: dotAnim_26_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_26_3 {
-        0%, 50.8% { opacity: 0.9; }
-        51.8%, 62.8% { opacity: 0; }
-        75.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_26_3 {
-        animation: dotAnim_26_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_27_0 {
-        0%, 52.2% { opacity: 0.9; }
-        53.2%, 64.2% { opacity: 0; }
-        77.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_27_0 {
-        animation: dotAnim_27_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_27_1 {
-        0%, 52.2% { opacity: 0.9; }
-        53.2%, 64.2% { opacity: 0; }
-        77.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_27_1 {
-        animation: dotAnim_27_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_27_2 {
-        0%, 52.2% { opacity: 0.9; }
-        53.2%, 64.2% { opacity: 0; }
-        77.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_27_2 {
-        animation: dotAnim_27_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_27_3 {
-        0%, 52.2% { opacity: 0.9; }
-        53.2%, 64.2% { opacity: 0; }
-        77.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_27_3 {
-        animation: dotAnim_27_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_28_0 {
-        0%, 53.5% { opacity: 0.9; }
-        54.5%, 65.5% { opacity: 0; }
-        78.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_28_0 {
-        animation: dotAnim_28_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_28_1 {
-        0%, 53.5% { opacity: 0.9; }
-        54.5%, 65.5% { opacity: 0; }
-        78.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_28_1 {
-        animation: dotAnim_28_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_28_2 {
-        0%, 53.5% { opacity: 0.9; }
-        54.5%, 65.5% { opacity: 0; }
-        78.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_28_2 {
-        animation: dotAnim_28_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_28_3 {
-        0%, 53.5% { opacity: 0.9; }
-        54.5%, 65.5% { opacity: 0; }
-        78.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_28_3 {
-        animation: dotAnim_28_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_29_0 {
-        0%, 54.9% { opacity: 0.9; }
-        55.9%, 66.9% { opacity: 0; }
-        79.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_29_0 {
-        animation: dotAnim_29_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_29_1 {
-        0%, 54.9% { opacity: 0.9; }
-        55.9%, 66.9% { opacity: 0; }
-        79.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_29_1 {
-        animation: dotAnim_29_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_29_2 {
-        0%, 54.9% { opacity: 0.9; }
-        55.9%, 66.9% { opacity: 0; }
-        79.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_29_2 {
-        animation: dotAnim_29_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_29_3 {
-        0%, 54.9% { opacity: 0.9; }
-        55.9%, 66.9% { opacity: 0; }
-        79.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_29_3 {
-        animation: dotAnim_29_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_30_0 {
-        0%, 56.3% { opacity: 0.9; }
-        57.3%, 68.3% { opacity: 0; }
-        81.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_30_0 {
-        animation: dotAnim_30_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_30_1 {
-        0%, 56.3% { opacity: 0.9; }
-        57.3%, 68.3% { opacity: 0; }
-        81.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_30_1 {
-        animation: dotAnim_30_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_30_2 {
-        0%, 56.3% { opacity: 0.9; }
-        57.3%, 68.3% { opacity: 0; }
-        81.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_30_2 {
-        animation: dotAnim_30_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_30_3 {
-        0%, 56.3% { opacity: 0.9; }
-        57.3%, 68.3% { opacity: 0; }
-        81.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_30_3 {
-        animation: dotAnim_30_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_31_0 {
-        0%, 57.6% { opacity: 0.9; }
-        58.6%, 69.6% { opacity: 0; }
-        82.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_31_0 {
-        animation: dotAnim_31_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_31_1 {
-        0%, 57.6% { opacity: 0.9; }
-        58.6%, 69.6% { opacity: 0; }
-        82.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_31_1 {
-        animation: dotAnim_31_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_31_2 {
-        0%, 57.6% { opacity: 0.9; }
-        58.6%, 69.6% { opacity: 0; }
-        82.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_31_2 {
-        animation: dotAnim_31_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_31_3 {
-        0%, 57.6% { opacity: 0.9; }
-        58.6%, 69.6% { opacity: 0; }
-        82.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_31_3 {
-        animation: dotAnim_31_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_32_0 {
-        0%, 59.0% { opacity: 0.9; }
-        60.0%, 71.0% { opacity: 0; }
-        84.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_32_0 {
-        animation: dotAnim_32_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_32_1 {
-        0%, 59.0% { opacity: 0.9; }
-        60.0%, 71.0% { opacity: 0; }
-        84.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_32_1 {
-        animation: dotAnim_32_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_32_2 {
-        0%, 59.0% { opacity: 0.9; }
-        60.0%, 71.0% { opacity: 0; }
-        84.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_32_2 {
-        animation: dotAnim_32_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_32_3 {
-        0%, 59.0% { opacity: 0.9; }
-        60.0%, 71.0% { opacity: 0; }
-        84.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_32_3 {
-        animation: dotAnim_32_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_33_0 {
-        0%, 60.3% { opacity: 0.9; }
-        61.3%, 72.3% { opacity: 0; }
-        85.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_33_0 {
-        animation: dotAnim_33_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_33_1 {
-        0%, 60.3% { opacity: 0.9; }
-        61.3%, 72.3% { opacity: 0; }
-        85.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_33_1 {
-        animation: dotAnim_33_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_33_2 {
-        0%, 60.3% { opacity: 0.9; }
-        61.3%, 72.3% { opacity: 0; }
-        85.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_33_2 {
-        animation: dotAnim_33_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_33_3 {
-        0%, 60.3% { opacity: 0.9; }
-        61.3%, 72.3% { opacity: 0; }
-        85.3%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_33_3 {
-        animation: dotAnim_33_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_34_0 {
-        0%, 61.7% { opacity: 0.9; }
-        62.7%, 73.7% { opacity: 0; }
-        86.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_34_0 {
-        animation: dotAnim_34_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_34_1 {
-        0%, 61.7% { opacity: 0.9; }
-        62.7%, 73.7% { opacity: 0; }
-        86.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_34_1 {
-        animation: dotAnim_34_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_34_2 {
-        0%, 61.7% { opacity: 0.9; }
-        62.7%, 73.7% { opacity: 0; }
-        86.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_34_2 {
-        animation: dotAnim_34_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_34_3 {
-        0%, 61.7% { opacity: 0.9; }
-        62.7%, 73.7% { opacity: 0; }
-        86.7%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_34_3 {
-        animation: dotAnim_34_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_35_0 {
-        0%, 63.1% { opacity: 0.9; }
-        64.1%, 75.1% { opacity: 0; }
-        88.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_35_0 {
-        animation: dotAnim_35_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_35_1 {
-        0%, 63.1% { opacity: 0.9; }
-        64.1%, 75.1% { opacity: 0; }
-        88.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_35_1 {
-        animation: dotAnim_35_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_35_2 {
-        0%, 63.1% { opacity: 0.9; }
-        64.1%, 75.1% { opacity: 0; }
-        88.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_35_2 {
-        animation: dotAnim_35_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_35_3 {
-        0%, 63.1% { opacity: 0.9; }
-        64.1%, 75.1% { opacity: 0; }
-        88.1%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_35_3 {
-        animation: dotAnim_35_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_36_0 {
-        0%, 64.4% { opacity: 0.9; }
-        65.4%, 76.4% { opacity: 0; }
-        89.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_36_0 {
-        animation: dotAnim_36_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_36_1 {
-        0%, 64.4% { opacity: 0.9; }
-        65.4%, 76.4% { opacity: 0; }
-        89.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_36_1 {
-        animation: dotAnim_36_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_36_2 {
-        0%, 64.4% { opacity: 0.9; }
-        65.4%, 76.4% { opacity: 0; }
-        89.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_36_2 {
-        animation: dotAnim_36_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_36_3 {
-        0%, 64.4% { opacity: 0.9; }
-        65.4%, 76.4% { opacity: 0; }
-        89.4%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_36_3 {
-        animation: dotAnim_36_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_37_0 {
-        0%, 65.8% { opacity: 0.9; }
-        66.8%, 77.8% { opacity: 0; }
-        90.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_37_0 {
-        animation: dotAnim_37_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_37_1 {
-        0%, 65.8% { opacity: 0.9; }
-        66.8%, 77.8% { opacity: 0; }
-        90.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_37_1 {
-        animation: dotAnim_37_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_37_2 {
-        0%, 65.8% { opacity: 0.9; }
-        66.8%, 77.8% { opacity: 0; }
-        90.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_37_2 {
-        animation: dotAnim_37_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_37_3 {
-        0%, 65.8% { opacity: 0.9; }
-        66.8%, 77.8% { opacity: 0; }
-        90.8%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_37_3 {
-        animation: dotAnim_37_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_38_0 {
-        0%, 67.2% { opacity: 0.9; }
-        68.2%, 79.2% { opacity: 0; }
-        92.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_38_0 {
-        animation: dotAnim_38_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_38_1 {
-        0%, 67.2% { opacity: 0.9; }
-        68.2%, 79.2% { opacity: 0; }
-        92.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_38_1 {
-        animation: dotAnim_38_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_38_2 {
-        0%, 67.2% { opacity: 0.9; }
-        68.2%, 79.2% { opacity: 0; }
-        92.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_38_2 {
-        animation: dotAnim_38_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_38_3 {
-        0%, 67.2% { opacity: 0.9; }
-        68.2%, 79.2% { opacity: 0; }
-        92.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_38_3 {
-        animation: dotAnim_38_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_39_0 {
-        0%, 68.5% { opacity: 0.9; }
-        69.5%, 80.5% { opacity: 0; }
-        93.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_39_0 {
-        animation: dotAnim_39_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_39_1 {
-        0%, 68.5% { opacity: 0.9; }
-        69.5%, 80.5% { opacity: 0; }
-        93.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_39_1 {
-        animation: dotAnim_39_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_39_2 {
-        0%, 68.5% { opacity: 0.9; }
-        69.5%, 80.5% { opacity: 0; }
-        93.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_39_2 {
-        animation: dotAnim_39_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_39_3 {
-        0%, 68.5% { opacity: 0.9; }
-        69.5%, 80.5% { opacity: 0; }
-        93.5%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_39_3 {
-        animation: dotAnim_39_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_40_0 {
-        0%, 69.9% { opacity: 0.9; }
-        70.9%, 81.9% { opacity: 0; }
-        94.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_40_0 {
-        animation: dotAnim_40_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_40_1 {
-        0%, 69.9% { opacity: 0.9; }
-        70.9%, 81.9% { opacity: 0; }
-        94.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_40_1 {
-        animation: dotAnim_40_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_40_2 {
-        0%, 69.9% { opacity: 0.9; }
-        70.9%, 81.9% { opacity: 0; }
-        94.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_40_2 {
-        animation: dotAnim_40_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_40_3 {
-        0%, 69.9% { opacity: 0.9; }
-        70.9%, 81.9% { opacity: 0; }
-        94.9%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_40_3 {
-        animation: dotAnim_40_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_41_0 {
-        0%, 71.2% { opacity: 0.9; }
-        72.2%, 83.2% { opacity: 0; }
-        96.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_41_0 {
-        animation: dotAnim_41_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_41_1 {
-        0%, 71.2% { opacity: 0.9; }
-        72.2%, 83.2% { opacity: 0; }
-        96.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_41_1 {
-        animation: dotAnim_41_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_41_2 {
-        0%, 71.2% { opacity: 0.9; }
-        72.2%, 83.2% { opacity: 0; }
-        96.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_41_2 {
-        animation: dotAnim_41_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_41_3 {
-        0%, 71.2% { opacity: 0.9; }
-        72.2%, 83.2% { opacity: 0; }
-        96.2%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_41_3 {
-        animation: dotAnim_41_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_42_0 {
-        0%, 72.6% { opacity: 0.9; }
-        73.6%, 84.6% { opacity: 0; }
-        97.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_42_0 {
-        animation: dotAnim_42_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_42_1 {
-        0%, 72.6% { opacity: 0.9; }
-        73.6%, 84.6% { opacity: 0; }
-        97.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_42_1 {
-        animation: dotAnim_42_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_42_2 {
-        0%, 72.6% { opacity: 0.9; }
-        73.6%, 84.6% { opacity: 0; }
-        97.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_42_2 {
-        animation: dotAnim_42_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_42_3 {
-        0%, 72.6% { opacity: 0.9; }
-        73.6%, 84.6% { opacity: 0; }
-        97.6%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_42_3 {
-        animation: dotAnim_42_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_43_0 {
-        0%, 74.0% { opacity: 0.9; }
-        75.0%, 86.0% { opacity: 0; }
-        99.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_43_0 {
-        animation: dotAnim_43_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_43_1 {
-        0%, 74.0% { opacity: 0.9; }
-        75.0%, 86.0% { opacity: 0; }
-        99.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_43_1 {
-        animation: dotAnim_43_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_43_2 {
-        0%, 74.0% { opacity: 0.9; }
-        75.0%, 86.0% { opacity: 0; }
-        99.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_43_2 {
-        animation: dotAnim_43_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_43_3 {
-        0%, 74.0% { opacity: 0.9; }
-        75.0%, 86.0% { opacity: 0; }
-        99.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_43_3 {
-        animation: dotAnim_43_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_44_0 {
-        0%, 75.3% { opacity: 0.9; }
-        76.3%, 87.3% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_44_0 {
-        animation: dotAnim_44_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_44_1 {
-        0%, 75.3% { opacity: 0.9; }
-        76.3%, 87.3% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_44_1 {
-        animation: dotAnim_44_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_44_2 {
-        0%, 75.3% { opacity: 0.9; }
-        76.3%, 87.3% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_44_2 {
-        animation: dotAnim_44_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_44_3 {
-        0%, 75.3% { opacity: 0.9; }
-        76.3%, 87.3% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_44_3 {
-        animation: dotAnim_44_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_45_0 {
-        0%, 76.7% { opacity: 0.9; }
-        77.7%, 88.7% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_45_0 {
-        animation: dotAnim_45_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_45_1 {
-        0%, 76.7% { opacity: 0.9; }
-        77.7%, 88.7% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_45_1 {
-        animation: dotAnim_45_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_45_2 {
-        0%, 76.7% { opacity: 0.9; }
-        77.7%, 88.7% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_45_2 {
-        animation: dotAnim_45_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_45_3 {
-        0%, 76.7% { opacity: 0.9; }
-        77.7%, 88.7% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_45_3 {
-        animation: dotAnim_45_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_46_0 {
-        0%, 78.0% { opacity: 0.9; }
-        79.0%, 90.0% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_46_0 {
-        animation: dotAnim_46_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_46_1 {
-        0%, 78.0% { opacity: 0.9; }
-        79.0%, 90.0% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_46_1 {
-        animation: dotAnim_46_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_46_2 {
-        0%, 78.0% { opacity: 0.9; }
-        79.0%, 90.0% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_46_2 {
-        animation: dotAnim_46_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_46_3 {
-        0%, 78.0% { opacity: 0.9; }
-        79.0%, 90.0% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_46_3 {
-        animation: dotAnim_46_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_47_0 {
-        0%, 79.4% { opacity: 0.9; }
-        80.4%, 91.4% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_47_0 {
-        animation: dotAnim_47_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_47_1 {
-        0%, 79.4% { opacity: 0.9; }
-        80.4%, 91.4% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_47_1 {
-        animation: dotAnim_47_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_47_2 {
-        0%, 79.4% { opacity: 0.9; }
-        80.4%, 91.4% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_47_2 {
-        animation: dotAnim_47_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_47_3 {
-        0%, 79.4% { opacity: 0.9; }
-        80.4%, 91.4% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_47_3 {
-        animation: dotAnim_47_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_48_0 {
-        0%, 80.8% { opacity: 0.9; }
-        81.8%, 92.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_48_0 {
-        animation: dotAnim_48_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_48_1 {
-        0%, 80.8% { opacity: 0.9; }
-        81.8%, 92.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_48_1 {
-        animation: dotAnim_48_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_48_2 {
-        0%, 80.8% { opacity: 0.9; }
-        81.8%, 92.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_48_2 {
-        animation: dotAnim_48_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_48_3 {
-        0%, 80.8% { opacity: 0.9; }
-        81.8%, 92.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_48_3 {
-        animation: dotAnim_48_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_49_0 {
-        0%, 82.1% { opacity: 0.9; }
-        83.1%, 94.1% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_49_0 {
-        animation: dotAnim_49_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_49_1 {
-        0%, 82.1% { opacity: 0.9; }
-        83.1%, 94.1% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_49_1 {
-        animation: dotAnim_49_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_49_2 {
-        0%, 82.1% { opacity: 0.9; }
-        83.1%, 94.1% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_49_2 {
-        animation: dotAnim_49_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_49_3 {
-        0%, 82.1% { opacity: 0.9; }
-        83.1%, 94.1% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_49_3 {
-        animation: dotAnim_49_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_50_0 {
-        0%, 83.5% { opacity: 0.9; }
-        84.5%, 95.5% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_50_0 {
-        animation: dotAnim_50_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_50_1 {
-        0%, 83.5% { opacity: 0.9; }
-        84.5%, 95.5% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_50_1 {
-        animation: dotAnim_50_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_50_2 {
-        0%, 83.5% { opacity: 0.9; }
-        84.5%, 95.5% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_50_2 {
-        animation: dotAnim_50_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_50_3 {
-        0%, 83.5% { opacity: 0.9; }
-        84.5%, 95.5% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_50_3 {
-        animation: dotAnim_50_3 10.0s linear infinite;
-      }
-      @keyframes dotAnim_51_0 {
-        0%, 84.8% { opacity: 0.9; }
-        85.8%, 96.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_51_0 {
-        animation: dotAnim_51_0 10.0s linear infinite;
-      }
-      @keyframes dotAnim_51_1 {
-        0%, 84.8% { opacity: 0.9; }
-        85.8%, 96.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_51_1 {
-        animation: dotAnim_51_1 10.0s linear infinite;
-      }
-      @keyframes dotAnim_51_2 {
-        0%, 84.8% { opacity: 0.9; }
-        85.8%, 96.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_51_2 {
-        animation: dotAnim_51_2 10.0s linear infinite;
-      }
-      @keyframes dotAnim_51_3 {
-        0%, 84.8% { opacity: 0.9; }
-        85.8%, 96.8% { opacity: 0; }
-        100.0%, 100% { opacity: 0.9; }
-      }
-      .dotAnim_51_3 {
-        animation: dotAnim_51_3 10.0s linear infinite;
-      }
     </style>
   </defs>
 
@@ -1748,268 +94,634 @@
   <!-- Contribution Grid Maze Background (52 Columns x 4 Rows) -->
   <g transform="translate(36, 70)">
 
-      <circle cx="8.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_0_0" />
-      <circle cx="8.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_0_1" />
-      <circle cx="8.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_0_2" />
-      <circle cx="8.0" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_0_3" />
-      <circle cx="29.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_1_0" />
-      <circle cx="29.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_1_1" />
-      <circle cx="29.5" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_1_2" />
-      <circle cx="29.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_1_3" />
-      <circle cx="51.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_2_0" />
-      <circle cx="51.0" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_2_1" />
-      <circle cx="51.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_2_2" />
-      <circle cx="51.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_2_3" />
-      <circle cx="72.5" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_3_0" />
-      <circle cx="72.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_3_1" />
-      <circle cx="72.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_3_2" />
-      <circle cx="72.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_3_3" />
-      <circle cx="94.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_4_0" />
-      <circle cx="94.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_4_1" />
-      <circle cx="94.0" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_4_2" />
-      <circle cx="94.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_4_3" />
-      <circle cx="115.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_5_0" />
-      <circle cx="115.5" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_5_1" />
-      <circle cx="115.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_5_2" />
-      <circle cx="115.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_5_3" />
-      <circle cx="137.0" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_6_0" />
-      <circle cx="137.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_6_1" />
-      <circle cx="137.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_6_2" />
-      <circle cx="137.0" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_6_3" />
-      <circle cx="158.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_7_0" />
-      <circle cx="158.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_7_1" />
-      <circle cx="158.5" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_7_2" />
-      <circle cx="158.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_7_3" />
-      <circle cx="180.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_8_0" />
-      <circle cx="180.0" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_8_1" />
-      <circle cx="180.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_8_2" />
-      <circle cx="180.0" cy="70.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_8_3" />
-      <circle cx="201.5" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_9_0" />
-      <circle cx="201.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_9_1" />
-      <circle cx="201.5" cy="50.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_9_2" />
-      <circle cx="201.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_9_3" />
-      <circle cx="223.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_10_0" />
-      <circle cx="223.0" cy="30.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_10_1" />
-      <circle cx="223.0" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_10_2" />
-      <circle cx="223.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_10_3" />
-      <circle cx="244.5" cy="10.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_11_0" />
-      <circle cx="244.5" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_11_1" />
-      <circle cx="244.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_11_2" />
-      <circle cx="244.5" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_11_3" />
-      <circle cx="266.0" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_12_0" />
-      <circle cx="266.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_12_1" />
-      <circle cx="266.0" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_12_2" />
-      <circle cx="266.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_12_3" />
-      <circle cx="287.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_13_0" />
-      <circle cx="287.5" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_13_1" />
-      <circle cx="287.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_13_2" />
-      <circle cx="287.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_13_3" />
-      <circle cx="309.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_14_0" />
-      <circle cx="309.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_14_1" />
-      <circle cx="309.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_14_2" />
-      <circle cx="309.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_14_3" />
-      <circle cx="330.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_15_0" />
-      <circle cx="330.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_15_1" />
-      <circle cx="330.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_15_2" />
-      <circle cx="330.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_15_3" />
-      <circle cx="352.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_16_0" />
-      <circle cx="352.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_16_1" />
-      <circle cx="352.0" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_16_2" />
-      <circle cx="352.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_16_3" />
-      <circle cx="373.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_17_0" />
-      <circle cx="373.5" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_17_1" />
-      <circle cx="373.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_17_2" />
-      <circle cx="373.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_17_3" />
-      <circle cx="395.0" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_18_0" />
-      <circle cx="395.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_18_1" />
-      <circle cx="395.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_18_2" />
-      <circle cx="395.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_18_3" />
-      <circle cx="416.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_19_0" />
-      <circle cx="416.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_19_1" />
-      <circle cx="416.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_19_2" />
-      <circle cx="416.5" cy="70.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_19_3" />
-      <circle cx="438.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_20_0" />
-      <circle cx="438.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_20_1" />
-      <circle cx="438.0" cy="50.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_20_2" />
-      <circle cx="438.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_20_3" />
-      <circle cx="459.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_21_0" />
-      <circle cx="459.5" cy="30.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_21_1" />
-      <circle cx="459.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_21_2" />
-      <circle cx="459.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_21_3" />
-      <circle cx="481.0" cy="10.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_22_0" />
-      <circle cx="481.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_22_1" />
-      <circle cx="481.0" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_22_2" />
-      <circle cx="481.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_22_3" />
-      <circle cx="502.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_23_0" />
-      <circle cx="502.5" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_23_1" />
-      <circle cx="502.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_23_2" />
-      <circle cx="502.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_23_3" />
-      <circle cx="524.0" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_24_0" />
-      <circle cx="524.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_24_1" />
-      <circle cx="524.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_24_2" />
-      <circle cx="524.0" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_24_3" />
-      <circle cx="545.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_25_0" />
-      <circle cx="545.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_25_1" />
-      <circle cx="545.5" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_25_2" />
-      <circle cx="545.5" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_25_3" />
-      <circle cx="567.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_26_0" />
-      <circle cx="567.0" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_26_1" />
-      <circle cx="567.0" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_26_2" />
-      <circle cx="567.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_26_3" />
-      <circle cx="588.5" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_27_0" />
-      <circle cx="588.5" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_27_1" />
-      <circle cx="588.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_27_2" />
-      <circle cx="588.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_27_3" />
-      <circle cx="610.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_28_0" />
-      <circle cx="610.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_28_1" />
-      <circle cx="610.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_28_2" />
-      <circle cx="610.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_28_3" />
-      <circle cx="631.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_29_0" />
-      <circle cx="631.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_29_1" />
-      <circle cx="631.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_29_2" />
-      <circle cx="631.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_29_3" />
-      <circle cx="653.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_30_0" />
-      <circle cx="653.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_30_1" />
-      <circle cx="653.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_30_2" />
-      <circle cx="653.0" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_30_3" />
-      <circle cx="674.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_31_0" />
-      <circle cx="674.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_31_1" />
-      <circle cx="674.5" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_31_2" />
-      <circle cx="674.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_31_3" />
-      <circle cx="696.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_32_0" />
-      <circle cx="696.0" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_32_1" />
-      <circle cx="696.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_32_2" />
-      <circle cx="696.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_32_3" />
-      <circle cx="717.5" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_33_0" />
-      <circle cx="717.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_33_1" />
-      <circle cx="717.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_33_2" />
-      <circle cx="717.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_33_3" />
-      <circle cx="739.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_34_0" />
-      <circle cx="739.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_34_1" />
-      <circle cx="739.0" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_34_2" />
-      <circle cx="739.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_34_3" />
-      <circle cx="760.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_35_0" />
-      <circle cx="760.5" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_35_1" />
-      <circle cx="760.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_35_2" />
-      <circle cx="760.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_35_3" />
-      <circle cx="782.0" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_36_0" />
-      <circle cx="782.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_36_1" />
-      <circle cx="782.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_36_2" />
-      <circle cx="782.0" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_36_3" />
-      <circle cx="803.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_37_0" />
-      <circle cx="803.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_37_1" />
-      <circle cx="803.5" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_37_2" />
-      <circle cx="803.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_37_3" />
-      <circle cx="825.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_38_0" />
-      <circle cx="825.0" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_38_1" />
-      <circle cx="825.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_38_2" />
-      <circle cx="825.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_38_3" />
-      <circle cx="846.5" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_39_0" />
-      <circle cx="846.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_39_1" />
-      <circle cx="846.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_39_2" />
-      <circle cx="846.5" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_39_3" />
-      <circle cx="868.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_40_0" />
-      <circle cx="868.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_40_1" />
-      <circle cx="868.0" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_40_2" />
-      <circle cx="868.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_40_3" />
-      <circle cx="889.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_41_0" />
-      <circle cx="889.5" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_41_1" />
-      <circle cx="889.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_41_2" />
-      <circle cx="889.5" cy="70.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_41_3" />
-      <circle cx="911.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_42_0" />
-      <circle cx="911.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_42_1" />
-      <circle cx="911.0" cy="50.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_42_2" />
-      <circle cx="911.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_42_3" />
-      <circle cx="932.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_43_0" />
-      <circle cx="932.5" cy="30.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_43_1" />
-      <circle cx="932.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_43_2" />
-      <circle cx="932.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_43_3" />
-      <circle cx="954.0" cy="10.0" r="4" fill="#f472b6" opacity="0.9" class="dotAnim_44_0" />
-      <circle cx="954.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_44_1" />
-      <circle cx="954.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_44_2" />
-      <circle cx="954.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_44_3" />
-      <circle cx="975.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_45_0" />
-      <circle cx="975.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_45_1" />
-      <circle cx="975.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_45_2" />
-      <circle cx="975.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_45_3" />
-      <circle cx="997.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_46_0" />
-      <circle cx="997.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_46_1" />
-      <circle cx="997.0" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_46_2" />
-      <circle cx="997.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_46_3" />
-      <circle cx="1018.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_47_0" />
-      <circle cx="1018.5" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_47_1" />
-      <circle cx="1018.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_47_2" />
-      <circle cx="1018.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_47_3" />
-      <circle cx="1040.0" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_48_0" />
-      <circle cx="1040.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_48_1" />
-      <circle cx="1040.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_48_2" />
-      <circle cx="1040.0" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_48_3" />
-      <circle cx="1061.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9" class="dotAnim_49_0" />
-      <circle cx="1061.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_49_1" />
-      <circle cx="1061.5" cy="50.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_49_2" />
-      <circle cx="1061.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_49_3" />
-      <circle cx="1083.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9" class="dotAnim_50_0" />
-      <circle cx="1083.0" cy="30.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_50_1" />
-      <circle cx="1083.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_50_2" />
-      <circle cx="1083.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_50_3" />
-      <circle cx="1104.5" cy="10.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_51_0" />
-      <circle cx="1104.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_51_1" />
-      <circle cx="1104.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9" class="dotAnim_51_2" />
-      <circle cx="1104.5" cy="70.0" r="4" fill="#10b981" opacity="0.9" class="dotAnim_51_3" />
+      <circle cx="8.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.154; 0.164; 0.274; 0.404; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="8.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.154; 0.164; 0.274; 0.404; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="8.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.154; 0.164; 0.274; 0.404; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="8.0" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.154; 0.164; 0.274; 0.404; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="29.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.168; 0.178; 0.288; 0.418; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="29.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.168; 0.178; 0.288; 0.418; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="29.5" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.168; 0.178; 0.288; 0.418; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="29.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.168; 0.178; 0.288; 0.418; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="51.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.182; 0.192; 0.302; 0.432; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="51.0" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.182; 0.192; 0.302; 0.432; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="51.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.182; 0.192; 0.302; 0.432; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="51.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.182; 0.192; 0.302; 0.432; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="72.5" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.195; 0.205; 0.315; 0.445; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="72.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.195; 0.205; 0.315; 0.445; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="72.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.195; 0.205; 0.315; 0.445; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="72.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.195; 0.205; 0.315; 0.445; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="94.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.209; 0.219; 0.329; 0.459; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="94.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.209; 0.219; 0.329; 0.459; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="94.0" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.209; 0.219; 0.329; 0.459; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="94.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.209; 0.219; 0.329; 0.459; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="115.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.222; 0.232; 0.342; 0.472; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="115.5" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.222; 0.232; 0.342; 0.472; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="115.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.222; 0.232; 0.342; 0.472; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="115.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.222; 0.232; 0.342; 0.472; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="137.0" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.236; 0.246; 0.356; 0.486; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="137.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.236; 0.246; 0.356; 0.486; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="137.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.236; 0.246; 0.356; 0.486; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="137.0" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.236; 0.246; 0.356; 0.486; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="158.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.250; 0.260; 0.370; 0.500; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="158.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.250; 0.260; 0.370; 0.500; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="158.5" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.250; 0.260; 0.370; 0.500; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="158.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.250; 0.260; 0.370; 0.500; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="180.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.263; 0.273; 0.383; 0.513; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="180.0" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.263; 0.273; 0.383; 0.513; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="180.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.263; 0.273; 0.383; 0.513; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="180.0" cy="70.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.263; 0.273; 0.383; 0.513; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="201.5" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.277; 0.287; 0.397; 0.527; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="201.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.277; 0.287; 0.397; 0.527; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="201.5" cy="50.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.277; 0.287; 0.397; 0.527; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="201.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.277; 0.287; 0.397; 0.527; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="223.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.291; 0.301; 0.411; 0.541; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="223.0" cy="30.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.291; 0.301; 0.411; 0.541; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="223.0" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.291; 0.301; 0.411; 0.541; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="223.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.291; 0.301; 0.411; 0.541; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="244.5" cy="10.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.304; 0.314; 0.424; 0.554; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="244.5" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.304; 0.314; 0.424; 0.554; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="244.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.304; 0.314; 0.424; 0.554; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="244.5" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.304; 0.314; 0.424; 0.554; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="266.0" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.318; 0.328; 0.438; 0.568; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="266.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.318; 0.328; 0.438; 0.568; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="266.0" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.318; 0.328; 0.438; 0.568; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="266.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.318; 0.328; 0.438; 0.568; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="287.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.331; 0.341; 0.451; 0.581; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="287.5" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.331; 0.341; 0.451; 0.581; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="287.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.331; 0.341; 0.451; 0.581; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="287.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.331; 0.341; 0.451; 0.581; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="309.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.345; 0.355; 0.465; 0.595; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="309.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.345; 0.355; 0.465; 0.595; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="309.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.345; 0.355; 0.465; 0.595; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="309.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.345; 0.355; 0.465; 0.595; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="330.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.359; 0.369; 0.479; 0.609; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="330.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.359; 0.369; 0.479; 0.609; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="330.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.359; 0.369; 0.479; 0.609; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="330.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.359; 0.369; 0.479; 0.609; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="352.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.372; 0.382; 0.492; 0.622; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="352.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.372; 0.382; 0.492; 0.622; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="352.0" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.372; 0.382; 0.492; 0.622; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="352.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.372; 0.382; 0.492; 0.622; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="373.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.386; 0.396; 0.506; 0.636; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="373.5" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.386; 0.396; 0.506; 0.636; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="373.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.386; 0.396; 0.506; 0.636; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="373.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.386; 0.396; 0.506; 0.636; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="395.0" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.399; 0.409; 0.519; 0.649; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="395.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.399; 0.409; 0.519; 0.649; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="395.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.399; 0.409; 0.519; 0.649; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="395.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.399; 0.409; 0.519; 0.649; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="416.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.413; 0.423; 0.533; 0.663; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="416.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.413; 0.423; 0.533; 0.663; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="416.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.413; 0.423; 0.533; 0.663; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="416.5" cy="70.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.413; 0.423; 0.533; 0.663; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="438.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.427; 0.437; 0.547; 0.677; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="438.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.427; 0.437; 0.547; 0.677; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="438.0" cy="50.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.427; 0.437; 0.547; 0.677; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="438.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.427; 0.437; 0.547; 0.677; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="459.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.440; 0.450; 0.560; 0.690; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="459.5" cy="30.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.440; 0.450; 0.560; 0.690; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="459.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.440; 0.450; 0.560; 0.690; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="459.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.440; 0.450; 0.560; 0.690; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="481.0" cy="10.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.454; 0.464; 0.574; 0.704; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="481.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.454; 0.464; 0.574; 0.704; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="481.0" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.454; 0.464; 0.574; 0.704; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="481.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.454; 0.464; 0.574; 0.704; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="502.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.467; 0.477; 0.587; 0.717; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="502.5" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.467; 0.477; 0.587; 0.717; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="502.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.467; 0.477; 0.587; 0.717; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="502.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.467; 0.477; 0.587; 0.717; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="524.0" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.481; 0.491; 0.601; 0.731; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="524.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.481; 0.491; 0.601; 0.731; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="524.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.481; 0.491; 0.601; 0.731; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="524.0" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.481; 0.491; 0.601; 0.731; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="545.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.495; 0.505; 0.615; 0.745; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="545.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.495; 0.505; 0.615; 0.745; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="545.5" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.495; 0.505; 0.615; 0.745; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="545.5" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.495; 0.505; 0.615; 0.745; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="567.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.508; 0.518; 0.628; 0.758; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="567.0" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.508; 0.518; 0.628; 0.758; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="567.0" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.508; 0.518; 0.628; 0.758; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="567.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.508; 0.518; 0.628; 0.758; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="588.5" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.522; 0.532; 0.642; 0.772; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="588.5" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.522; 0.532; 0.642; 0.772; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="588.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.522; 0.532; 0.642; 0.772; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="588.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.522; 0.532; 0.642; 0.772; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="610.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.535; 0.545; 0.655; 0.785; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="610.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.535; 0.545; 0.655; 0.785; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="610.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.535; 0.545; 0.655; 0.785; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="610.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.535; 0.545; 0.655; 0.785; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="631.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.549; 0.559; 0.669; 0.799; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="631.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.549; 0.559; 0.669; 0.799; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="631.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.549; 0.559; 0.669; 0.799; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="631.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.549; 0.559; 0.669; 0.799; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="653.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.563; 0.573; 0.683; 0.813; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="653.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.563; 0.573; 0.683; 0.813; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="653.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.563; 0.573; 0.683; 0.813; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="653.0" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.563; 0.573; 0.683; 0.813; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="674.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.576; 0.586; 0.696; 0.826; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="674.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.576; 0.586; 0.696; 0.826; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="674.5" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.576; 0.586; 0.696; 0.826; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="674.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.576; 0.586; 0.696; 0.826; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="696.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.590; 0.600; 0.710; 0.840; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="696.0" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.590; 0.600; 0.710; 0.840; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="696.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.590; 0.600; 0.710; 0.840; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="696.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.590; 0.600; 0.710; 0.840; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="717.5" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.603; 0.613; 0.723; 0.853; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="717.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.603; 0.613; 0.723; 0.853; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="717.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.603; 0.613; 0.723; 0.853; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="717.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.603; 0.613; 0.723; 0.853; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="739.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.617; 0.627; 0.737; 0.867; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="739.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.617; 0.627; 0.737; 0.867; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="739.0" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.617; 0.627; 0.737; 0.867; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="739.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.617; 0.627; 0.737; 0.867; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="760.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.631; 0.641; 0.751; 0.881; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="760.5" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.631; 0.641; 0.751; 0.881; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="760.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.631; 0.641; 0.751; 0.881; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="760.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.631; 0.641; 0.751; 0.881; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="782.0" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.644; 0.654; 0.764; 0.894; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="782.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.644; 0.654; 0.764; 0.894; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="782.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.644; 0.654; 0.764; 0.894; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="782.0" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.644; 0.654; 0.764; 0.894; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="803.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.658; 0.668; 0.778; 0.908; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="803.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.658; 0.668; 0.778; 0.908; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="803.5" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.658; 0.668; 0.778; 0.908; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="803.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.658; 0.668; 0.778; 0.908; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="825.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.672; 0.682; 0.792; 0.922; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="825.0" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.672; 0.682; 0.792; 0.922; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="825.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.672; 0.682; 0.792; 0.922; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="825.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.672; 0.682; 0.792; 0.922; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="846.5" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.685; 0.695; 0.805; 0.935; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="846.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.685; 0.695; 0.805; 0.935; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="846.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.685; 0.695; 0.805; 0.935; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="846.5" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.685; 0.695; 0.805; 0.935; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="868.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.699; 0.709; 0.819; 0.949; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="868.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.699; 0.709; 0.819; 0.949; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="868.0" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.699; 0.709; 0.819; 0.949; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="868.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.699; 0.709; 0.819; 0.949; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="889.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.712; 0.722; 0.832; 0.962; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="889.5" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.712; 0.722; 0.832; 0.962; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="889.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.712; 0.722; 0.832; 0.962; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="889.5" cy="70.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.712; 0.722; 0.832; 0.962; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="911.0" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.726; 0.736; 0.846; 0.976; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="911.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.726; 0.736; 0.846; 0.976; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="911.0" cy="50.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.726; 0.736; 0.846; 0.976; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="911.0" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.726; 0.736; 0.846; 0.976; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="932.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.740; 0.750; 0.860; 0.990; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="932.5" cy="30.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.740; 0.750; 0.860; 0.990; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="932.5" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.740; 0.750; 0.860; 0.990; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="932.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.740; 0.750; 0.860; 0.990; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="954.0" cy="10.0" r="4" fill="#f472b6" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.753; 0.763; 0.873; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="954.0" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.753; 0.763; 0.873; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="954.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.753; 0.763; 0.873; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="954.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.753; 0.763; 0.873; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="975.5" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.767; 0.777; 0.887; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="975.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.767; 0.777; 0.887; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="975.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.767; 0.777; 0.887; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="975.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.767; 0.777; 0.887; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="997.0" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.780; 0.790; 0.900; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="997.0" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.780; 0.790; 0.900; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="997.0" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.780; 0.790; 0.900; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="997.0" cy="70.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.780; 0.790; 0.900; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1018.5" cy="10.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.794; 0.804; 0.914; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1018.5" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.794; 0.804; 0.914; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1018.5" cy="50.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.794; 0.804; 0.914; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1018.5" cy="70.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.794; 0.804; 0.914; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1040.0" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.808; 0.818; 0.928; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1040.0" cy="30.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.808; 0.818; 0.928; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1040.0" cy="50.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.808; 0.818; 0.928; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1040.0" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.808; 0.818; 0.928; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1061.5" cy="10.0" r="4" fill="#38bdf8" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.821; 0.831; 0.941; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1061.5" cy="30.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.821; 0.831; 0.941; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1061.5" cy="50.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.821; 0.831; 0.941; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1061.5" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.821; 0.831; 0.941; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1083.0" cy="10.0" r="4" fill="#c084fc" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.835; 0.845; 0.955; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1083.0" cy="30.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.835; 0.845; 0.955; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1083.0" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.835; 0.845; 0.955; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1083.0" cy="70.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.835; 0.845; 0.955; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1104.5" cy="10.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.848; 0.858; 0.968; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1104.5" cy="30.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.848; 0.858; 0.968; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1104.5" cy="50.0" r="4" fill="#1E293B" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.848; 0.858; 0.968; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1104.5" cy="70.0" r="4" fill="#10b981" opacity="0.9">
+        <animate attributeName="opacity" values="0.9; 0.9; 0; 0; 0.9; 0.9" keyTimes="0; 0.848; 0.858; 0.968; 1.000; 1" dur="10.0s" repeatCount="indefinite" />
+      </circle>
   </g>
 
-  <!-- Pure CSS Keyframe Runner Group (100% Compatible with GitHub Camo Proxy - Exactly as dark.svg) -->
-  <g class="pacman-runner-group" transform="translate(0, 110)">
-
-    <!-- Ghosts Chasing / Following Pac-Man -->
-    <g class="ghost-bounce" transform="translate(-160, -18)">
-      <!-- Blinky (Red Ghost) -->
-      <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#EF4444"/>
-      <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
-      <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
-    </g>
-
-    <g class="ghost-bounce" transform="translate(-115, -18)">
-      <!-- Pinky (Pink Ghost) -->
-      <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#F472B6"/>
-      <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
-      <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
-    </g>
-
-    <g class="ghost-bounce" transform="translate(-70, -18)">
-      <!-- Inky (Cyan Ghost) -->
-      <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#38BDF8"/>
-      <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
-      <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
-    </g>
-
-    <g class="ghost-bounce" transform="translate(-25, -18)">
-      <!-- Clyde (Orange Ghost) -->
-      <path d="M0,12 A12,12 0 0,1 24,12 L24,24 L18,20 L12,24 L6,20 L0,24 Z" fill="#F59E0B"/>
-      <circle cx="7" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="17" cy="10" r="3" fill="#FFFFFF"/>
-      <circle cx="8" cy="10" r="1.5" fill="#1E293B"/>
-      <circle cx="18" cy="10" r="1.5" fill="#1E293B"/>
-    </g>
-
-    <!-- Pac-Man Hero Eating Pellets (CSS Rotated Mouth) -->
-    <g transform="translate(30, 0)">
-      <!-- Base Yellow Body -->
-      <circle cx="0" cy="0" r="20" fill="#FACC15"/>
-      <!-- Top Jaw -->
-      <path d="M 0 0 L 22 0 A 20 20 0 0 0 0 -20 Z" fill="#FACC15" class="mouth-top"/>
-      <!-- Bottom Jaw -->
-      <path d="M 0 0 L 22 0 A 20 20 0 0 1 0 20 Z" fill="#FACC15" class="mouth-bottom"/>
-      <!-- Mouth Cutout Wedge -->
-      <path d="M 0 0 L 22 -12 A 20 20 0 0 1 22 12 Z" fill="#0A101F"/>
-      <!-- Pac-Man Eye -->
-      <circle cx="2" cy="-10" r="2.5" fill="#0A101F"/>
-    </g>
-  </g>
+  <!-- Pac-Man Runner using SVG <use x="..." y="110"> with Dual SMIL <animate attributeName="x"> AND CSS Class Fallback! -->
+  <use href="#pacmanRunnerSymbol" x="-200" y="110" class="runner-x">
+    <animate attributeName="x" from="-200" to="1380" dur="10s" repeatCount="indefinite" />
+  </use>
 </svg>
