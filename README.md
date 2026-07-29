@@ -55,10 +55,10 @@
 
 <br/><br/>
 
-<!-- Animated Pac-Man Game Maze with React Bits BorderGlow -->
+<!-- Animated Pac-Man Game GIF (100% Guaranteed Animation on GitHub) -->
 <h3>🕹️ Interactive Contribution Maze</h3>
 
-<img width="100%" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/pacman.svg" alt="Pac-Man Contribution Game" />
+<img width="100%" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/pacman.gif" alt="Pac-Man Contribution Game" />
 
 <br/><br/>
 
