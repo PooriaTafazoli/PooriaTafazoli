@@ -24,8 +24,17 @@ jobs:
 
       - name: Clean SVG Progress Bar & Adjust ViewBox
         run: |
-          sed -i 's/<rect class="u [^"]*"[^>]*\/>//g' dist/*.svg
-          sed -i 's/viewBox="0 0 848.6
+          sed -i '/rect class="u/d' dist/*.svg
+          sed -i 's/156"/114"/g' dist/*.svg
+          sed -i 's/160"/114"/g' dist/*.svg
 
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "Update snake animation [skip ci]"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
