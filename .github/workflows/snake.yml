@@ -24,12 +24,8 @@ jobs:
 
       - name: Clean SVG Progress Bar & Adjust ViewBox
         run: |
-          python -c '
-          import glob, re
-          for f in glob.glob("dist/*.svg"):
-              with open(f, "r", encoding="utf-8") as file:
-                  data = file.read()
-              data = re.sub(r"<rect class=\"u [^\"]*\"[^>]*/>", "", data)
-              data = re.sub(r"viewBox=\"0 0 848\.6 \d+(\.\d+)?\"", "viewBox=\"0 0 848.6 114\"", data)
+          sed -i 's/<rect class="u [^"]*"[^>]*\/>//g' dist/*.svg
+          sed -i 's/viewBox="0 0 848.6
+
 
 
