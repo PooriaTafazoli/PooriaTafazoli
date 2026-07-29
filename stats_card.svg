@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 230" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc">
+        <animate attributeName="stop-color" values="#c084fc;#f472b6;#38bdf8;#10B981;#c084fc" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#f472b6">
+        <animate attributeName="stop-color" values="#f472b6;#38bdf8;#10B981;#c084fc;#f472b6" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#10B981;#c084fc;#f472b6;#38bdf8" dur="8s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <filter id="glowFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A101F" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <!-- React Bits BorderGlow Outer Frame -->
+  <rect width="540" height="230" rx="16" fill="url(#bgGrad)" stroke="url(#cardGlowGrad)" stroke-width="2" filter="url(#glowFilter)"/>
+
+  <!-- Title Row -->
+  <text x="24" y="38" font-family="Consolas, Fira Code, monospace" font-size="16" font-weight="bold" fill="#22D3EE" letter-spacing="1">Engineering Profile Stats</text>
+  <rect x="420" y="20" width="96" height="22" rx="11" fill="#1E293B"/>
+  <text x="468" y="35" font-family="Consolas, Fira Code, monospace" font-size="11" font-weight="bold" fill="#10B981" text-anchor="middle">Rank: A+</text>
+
+  <line x1="24" y1="54" x2="516" y2="54" stroke="#1E293B" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+  <!-- Stat Items -->
+  <g transform="translate(24, 82)">
+    <!-- Item 1 -->
+    <circle cx="12" cy="0" r="10" fill="#1E293B"/>
+    <path d="M12 -5 L14 -1 L18 0 L15 3 L16 7 L12 5 L8 7 L9 3 L6 0 L10 -1 Z" fill="#A78BFA"/>
+    <text x="32" y="4" font-family="Consolas, Fira Code, monospace" font-size="13" fill="#94A3B8">Total Contributions:</text>
+    <text x="492" y="4" font-family="Consolas, Fira Code, monospace" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="end">284+</text>
+  </g>
+
+  <g transform="translate(24, 115)">
+    <!-- Item 2 -->
+    <circle cx="12" cy="0" r="10" fill="#1E293B"/>
+    <text x="12" y="4" font-family="Consolas, Fira Code, monospace" font-size="11" font-weight="bold" fill="#38BDF8" text-anchor="middle">&gt;_</text>
+    <text x="32" y="4" font-family="Consolas, Fira Code, monospace" font-size="13" fill="#94A3B8">Total Code Commits:</text>
+    <text x="492" y="4" font-family="Consolas, Fira Code, monospace" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="end">420+</text>
+  </g>
+
+  <g transform="translate(24, 148)">
+    <!-- Item 3 -->
+    <circle cx="12" cy="0" r="10" fill="#1E293B"/>
+    <text x="12" y="4" font-family="Consolas, Fira Code, monospace" font-size="11" font-weight="bold" fill="#10B981" text-anchor="middle">PR</text>
+    <text x="32" y="4" font-family="Consolas, Fira Code, monospace" font-size="13" fill="#94A3B8">Projects &amp; Architectures:</text>
+    <text x="492" y="4" font-family="Consolas, Fira Code, monospace" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="end">14 Full-Stack Repos</text>
+  </g>
+
+  <g transform="translate(24, 181)">
+    <!-- Item 4 -->
+    <circle cx="12" cy="0" r="10" fill="#1E293B"/>
+    <text x="12" y="4" font-family="Consolas, Fira Code, monospace" font-size="10" font-weight="bold" fill="#F472B6" text-anchor="middle">EN</text>
+    <text x="32" y="4" font-family="Consolas, Fira Code, monospace" font-size="13" fill="#94A3B8">Spoken Languages:</text>
+    <text x="492" y="4" font-family="Consolas, Fira Code, monospace" font-size="13" font-weight="bold" fill="#22D3EE" text-anchor="end">English (Fluent) &amp; Persian</text>
+  </g>
+</svg>

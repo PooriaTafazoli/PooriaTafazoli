@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- Animated Dynamic Terminal Banner -->
+<!-- Animated Dynamic Terminal Banner with React Bits BorderGlow -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/light.svg">
@@ -44,16 +44,13 @@
 
 <br/><br/>
 
-<!-- Advanced High-Aesthetic GitHub Profile Summary Dashboard -->
-<h3>📊 Advanced Engineering Analytics</h3>
+<!-- Custom React Bits BorderGlow Vector Cards Dashboard -->
+<h3>📊 Engineering Analytics & Tech Distribution</h3>
 
 <p align="center">
-  <img width="98%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=PooriaTafazoli&theme=dracula" alt="Profile Details" />
-</p>
-<p align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=PooriaTafazoli&theme=dracula" alt="Most Commit Language" />
+  <img width="49%" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/stats_card.svg" alt="Engineering Profile Stats" />
   &nbsp;
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=PooriaTafazoli&theme=dracula" alt="Repos Per Language" />
+  <img width="49%" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/langs_card.svg" alt="Most Used Tech Stack" />
 </p>
 
 <br/><br/>
