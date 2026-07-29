@@ -55,12 +55,14 @@
 
 <br/><br/>
 
-<!-- Contribution Snake Grid Animation -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake.svg" />
-  <img alt="Snake eating contributions" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake-dark.svg" width="100%" />
-</picture>
+<!-- Contribution Snake Grid Animation (Clipped & Cropped Container) -->
+<div style="overflow: hidden; max-height: 116px; border-radius: 10px;">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake.svg" />
+    <img alt="Snake eating contributions" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake-dark.svg" width="100%" />
+  </picture>
+</div>
 
 <br/><br/>
 
