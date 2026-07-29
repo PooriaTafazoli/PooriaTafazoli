@@ -9,15 +9,52 @@
 
 <br/><br/>
 
+<!-- Engineering Core & Language Proficiency Shields -->
+<h3>⚡ Engineering Stack & Languages</h3>
+
+<p>
+  <img src="https://img.shields.io/badge/English-Fluent%20%2F%20Full%20Professional-22D3EE?style=for-the-badge&logo=googletranslate&logoColor=black" alt="English Fluent" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Elixir-4E2A8E?style=for-the-badge&logo=elixir&logoColor=white" alt="Elixir" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+</p>
+<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</p>
+
+<br/>
+
 <!-- Contribution Streak Card -->
 <img width="100%" src="https://streak-stats.demolab.com/?user=PooriaTafazoli&hide_border=true&background=0A101F&stroke=22D3EE&ring=A78BFA&fire=10B981&currStreakLabel=22D3EE&sideLabels=94A3B8&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=64748B&titleColor=22D3EE&card_width=1180" alt="GitHub Contribution Streak" />
 
 <br/><br/>
 
-<!-- Live GitHub Stats & Top Languages Cards -->
-<img width="49%" src="https://github-readme-stats-two-nu.vercel.app/api?username=PooriaTafazoli&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0A101F&card_width=500" alt="GitHub Stats" />
-&nbsp;
-<img width="49%" src="https://github-readme-stats-two-nu.vercel.app/api/top-langs/?username=PooriaTafazoli&layout=compact&langs_count=8&hide_border=true&title_color=22D3EE&text_color=94A3B8&bg_color=0A101F&card_width=500" alt="Top Languages" />
+<!-- Advanced High-Aesthetic GitHub Profile Summary Dashboard -->
+<h3>📊 Advanced Engineering Analytics</h3>
+
+<p align="center">
+  <img width="98%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=PooriaTafazoli&theme=dracula" alt="Profile Details" />
+</p>
+<p align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=PooriaTafazoli&theme=dracula" alt="Most Commit Language" />
+  &nbsp;
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=PooriaTafazoli&theme=dracula" alt="Repos Per Language" />
+</p>
 
 <br/><br/>
 
