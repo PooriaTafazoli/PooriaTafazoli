@@ -55,14 +55,10 @@
 
 <br/><br/>
 
-<!-- Contribution Snake Grid Animation (Clipped & Cropped Container) -->
-<div style="overflow: hidden; max-height: 116px; border-radius: 10px;">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake.svg" />
-    <img alt="Snake eating contributions" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/output/github-snake-dark.svg" width="100%" />
-  </picture>
-</div>
+<!-- Animated Pac-Man Game Maze with React Bits BorderGlow -->
+<h3>🕹️ Interactive Contribution Maze</h3>
+
+<img width="100%" src="https://raw.githubusercontent.com/PooriaTafazoli/PooriaTafazoli/main/pacman.svg" alt="Pac-Man Contribution Game" />
 
 <br/><br/>
 
