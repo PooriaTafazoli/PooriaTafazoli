@@ -22,6 +22,10 @@ jobs:
             dist/github-snake.svg?palette=github-light
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Clean SVG Progress Bar & Adjust ViewBox
+        run: |
+          python -c 'import glob, re; [open(f,"w",encoding="utf-8").write(re.sub(r"viewBox=\"0 0 ([0-9.]+) [0-9.]+\"", r"viewBox=\"0 0 \1 114\"", re.sub(r"<rect class=\"u [^\"]*\"[^>]*/>", "", open(f,"r",encoding="utf-8").read()))) for f in glob.glob("dist/*.svg")]'
+
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
@@ -30,4 +34,5 @@ jobs:
           commit_message: "Update snake animation [skip ci]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
